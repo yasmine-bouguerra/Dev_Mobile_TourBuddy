@@ -76,4 +76,9 @@ public class ForumFragment extends Fragment {
 
         return view;
     }
+    public void onAddPublicationClick(View view) {
+        // Naviguer vers le formulaire de création de publication
+        NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main);
+        navController.navigate(R.id.action_forumFragment_to_newPublicationFragment);
+    }
 }

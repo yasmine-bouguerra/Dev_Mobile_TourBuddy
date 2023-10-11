@@ -38,8 +38,12 @@
     <fragment
         android:id="@+id/nav_forum"
         android:name="tn.esprit.tourbuddy.ui.forum.ForumFragment"
-        android:label="@string/menu_forum"
-        tools:layout="@layout/fragment_forum" />
+        android:label="ForumFragment"
+        tools:layout="@layout/fragment_forum" >
+        <action
+            android:id="@+id/action_forumFragment_to_newPublicationFragment"
+            app:destination="@id/NewPublicationFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_offers"
@@ -51,4 +55,10 @@
     android:id="@+id/nav_publication_details"
     android:name="tn.esprit.tourbuddy.ui.forum.PublicationDetailFragment"
 tools:layout="@layout/fragment_detailpub" />
+
+    <fragment
+        android:id="@+id/NewPublicationFragment"
+        android:name="tn.esprit.tourbuddy.ui.forum.NewPublicationFragment"
+        android:label="NewPublicationFragment"
+        tools:layout="@layout/fragment_new_publication" />
 </navigation>

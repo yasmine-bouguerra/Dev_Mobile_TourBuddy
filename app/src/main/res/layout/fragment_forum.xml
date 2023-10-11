@@ -31,4 +31,12 @@
 
     android:layout_gravity="center"/>
 
+    <Button
+        android:id="@+id/btn_add_publication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ajouter une nouvelle publication"
+        android:layout_gravity="center"
+        android:onClick="onAddPublicationClick" />
+
 </LinearLayout>
