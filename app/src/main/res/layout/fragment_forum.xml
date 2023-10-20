@@ -9,7 +9,6 @@
     tools:context=".ui.forum.ForumFragment"
     tools:ignore="ExtraText">
 
-    <!-- Ajout d'un titre pour le fragment -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,17 +18,16 @@
         android:layout_gravity="center"
         android:layout_marginBottom="16dp"/>
 
-    <!-- Ajout de la ListView avec une bordure et des marges -->
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/border"
-    android:padding="8dp"
-    android:divider="@null"
-    android:dividerHeight="15dp"
+        android:padding="8dp"
+        android:divider="@null"
+        android:dividerHeight="15dp"
 
-    android:layout_gravity="center"/>
+        android:layout_gravity="center"/>
 
     <Button
         android:id="@+id/btn_add_publication"
@@ -38,5 +36,6 @@
         android:text="Ajouter une nouvelle publication"
         android:layout_gravity="center"
         android:onClick="onAddPublicationClick" />
+
 
 </LinearLayout>

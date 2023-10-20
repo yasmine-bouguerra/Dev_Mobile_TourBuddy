@@ -42,7 +42,7 @@
         tools:layout="@layout/fragment_forum" >
         <action
             android:id="@+id/action_forumFragment_to_newPublicationFragment"
-            app:destination="@id/NewPublicationFragment" />
+            app:destination="@id/nav_new_publication" />
     </fragment>
 
     <fragment
@@ -50,15 +50,15 @@
         android:name="tn.esprit.tourbuddy.ui.offers.OffersFragment"
         android:label="@string/menu_offers"
         tools:layout="@layout/fragment_offers" />
-
-<fragment
-    android:id="@+id/nav_publication_details"
-    android:name="tn.esprit.tourbuddy.ui.forum.PublicationDetailFragment"
-tools:layout="@layout/fragment_detailpub" />
+    <fragment
+        android:id="@+id/nav_publication_details"
+        android:name="tn.esprit.tourbuddy.ui.forum.PublicationDetailFragment"
+        tools:layout="@layout/fragment_detailpub" />
 
     <fragment
-        android:id="@+id/NewPublicationFragment"
+        android:id="@+id/nav_new_publication"
         android:name="tn.esprit.tourbuddy.ui.forum.NewPublicationFragment"
         android:label="NewPublicationFragment"
         tools:layout="@layout/fragment_new_publication" />
+
 </navigation>

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import androidx.navigation.Navigation;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import android.view.View;
 
 import tn.esprit.tourbuddy.R;
 
@@ -26,6 +28,16 @@ public class ForumFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_forum, container, false);
+
+
+        Button btnAddPublication = view.findViewById(R.id.btn_add_publication);
+        btnAddPublication.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onAddPublicationClick(v);
+            }
+        });
+
 
         // Simulation de données
         String[] titres = {"Publication 1", "Publication 2", "Publication 3"};
@@ -71,14 +83,18 @@ public class ForumFragment extends Fragment {
 
                 NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main);
                 navController.navigate(R.id.nav_publication_details, args);
+
             }
         });
 
         return view;
+
     }
-    public void onAddPublicationClick(View view) {
-        // Naviguer vers le formulaire de création de publication
+
+    private void onAddPublicationClick(View v) {
         NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main);
-        navController.navigate(R.id.action_forumFragment_to_newPublicationFragment);
+        navController.navigate(R.id.nav_new_publication);
     }
+
+
 }

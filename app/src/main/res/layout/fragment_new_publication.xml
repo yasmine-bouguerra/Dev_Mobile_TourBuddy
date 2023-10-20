@@ -24,18 +24,14 @@
         android:inputType="textMultiLine"
         android:lines="4" />
 
-    <!-- Champ pour l'auteur de la publication -->
-    <EditText
-        android:id="@+id/edit_text_author"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Auteur de la publication" />
 
     <!-- Bouton pour soumettre la nouvelle publication -->
     <Button
-        android:id="@+id/btn_submit_publication"
+        android:id="@+id/btn_add_publication"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Publier" />
+        android:text="Ajouter Publication"
+        android:onClick="onAddPublicationClick" />
+
 
 </LinearLayout>
