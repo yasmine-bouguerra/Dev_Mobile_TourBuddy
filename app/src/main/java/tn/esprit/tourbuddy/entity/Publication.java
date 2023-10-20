@@ -20,6 +20,7 @@ public class Publication {
 
     @ColumnInfo(name="image")
     private String imageP;
+    
 
     @Override
     public String toString() {
@@ -79,14 +80,6 @@ public class Publication {
         this.imageP = imageP;
     }
 
-    private List<Comment> comments;
 
-    private List<Comment> getComments(){
-        return comments;
-    };
-
-    public void setComments(List<Comment> comments) {
-        this.comments= comments;
-    }
 
 }

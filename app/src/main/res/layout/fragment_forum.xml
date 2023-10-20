@@ -21,12 +21,12 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="@drawable/border"
         android:padding="8dp"
         android:divider="@null"
         android:dividerHeight="15dp"
-
         android:layout_gravity="center"/>
 
     <Button
@@ -36,6 +36,5 @@
         android:text="Ajouter une nouvelle publication"
         android:layout_gravity="center"
         android:onClick="onAddPublicationClick" />
-
 
 </LinearLayout>
