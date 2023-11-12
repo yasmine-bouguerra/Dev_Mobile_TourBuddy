@@ -2,6 +2,7 @@ package tn.esprit.tourbuddy.ui.forum;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,9 +80,29 @@ public class ForumFragment extends Fragment {
                     );
 
                     listView.setAdapter(adapter);
+
+                    // Ajouter un OnItemClickListener pour gérer le clic sur un élément de la liste
+                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            // Récupérer l'ID de la publication sélectionnée si nécessaire
+                            long publicationId = publications.get(position).getPid();
+
+                            // Créer un bundle pour passer des données à PublicationDetailFragment
+                            Bundle bundle = new Bundle();
+                            bundle.putString("titre", publications.get(position).getTitre());
+                            bundle.putString("contenu", publications.get(position).getContenu());
+
+                            // Naviguer vers le PublicationDetailFragment en utilisant l'action définie dans le fichier de navigation
+                            NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main);
+                            navController.navigate(R.id.action_forumFragment_to_publicationDetailFragment, bundle);
+                        }
+                    });
+
                 }
             }
         }
+
 
     }
 

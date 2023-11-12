@@ -1,6 +1,7 @@
 package tn.esprit.tourbuddy.ui.forum;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,6 @@ public class PublicationDetailFragment extends Fragment {
         if (bundle != null) {
             String titre = bundle.getString("titre");
             String contenu = bundle.getString("contenu");
-            String auteur = bundle.getString("auteur");
 
             TextView textViewTitre = view.findViewById(R.id.text_view_titre);
             TextView textViewContenu = view.findViewById(R.id.text_view_contenu);
@@ -31,6 +31,8 @@ public class PublicationDetailFragment extends Fragment {
 
         return view;
     }
+
+
 
     public interface OnPublicationClickListener {
         void onPublicationClick(String titre, String contenu, String auteur);

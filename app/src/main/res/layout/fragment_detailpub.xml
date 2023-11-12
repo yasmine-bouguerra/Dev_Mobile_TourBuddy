@@ -24,11 +24,5 @@
         android:layout_marginBottom="8dp"
         tools:text="Contenu de la publication" />
 
-    <TextView
-        android:id="@+id/text_view_auteur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        tools:text="Auteur de la publication" />
 
 </LinearLayout>
