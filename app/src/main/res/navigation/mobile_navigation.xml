@@ -34,7 +34,18 @@
         android:name="tn.esprit.tourbuddy.ui.claims.ClaimsFragment"
         android:label="@string/menu_claims"
         tools:layout="@layout/fragment_claims" />
+    <fragment
+        android:id="@+id/nav_new_claims"
+        android:name="tn.esprit.tourbuddy.ui.claims.NewClaimsFragment"
+        android:label="ClaimsFragment"
+        tools:layout="@layout/fragment_new_claims">
 
+        <!-- Cette action vous permet de naviguer vers le fragment de formulaire de réclamation -->
+        <action
+            android:id="@+id/action_claimsFragment_to_newClaimsFragment"
+            app:destination="@id/nav_new_claims" />
+
+    </fragment>
     <fragment
         android:id="@+id/nav_forum"
         android:name="tn.esprit.tourbuddy.ui.forum.ForumFragment"
@@ -42,7 +53,7 @@
         tools:layout="@layout/fragment_forum" >
         <action
             android:id="@+id/action_forumFragment_to_newPublicationFragment"
-            app:destination="@id/NewPublicationFragment" />
+            app:destination="@id/nav_new_publication" />
     </fragment>
 
     <fragment
@@ -50,15 +61,15 @@
         android:name="tn.esprit.tourbuddy.ui.offers.OffersFragment"
         android:label="@string/menu_offers"
         tools:layout="@layout/fragment_offers" />
-
-<fragment
-    android:id="@+id/nav_publication_details"
-    android:name="tn.esprit.tourbuddy.ui.forum.PublicationDetailFragment"
-tools:layout="@layout/fragment_detailpub" />
+    <fragment
+        android:id="@+id/nav_publication_details"
+        android:name="tn.esprit.tourbuddy.ui.forum.PublicationDetailFragment"
+        tools:layout="@layout/fragment_detailpub" />
 
     <fragment
-        android:id="@+id/NewPublicationFragment"
+        android:id="@+id/nav_new_publication"
         android:name="tn.esprit.tourbuddy.ui.forum.NewPublicationFragment"
         android:label="NewPublicationFragment"
         tools:layout="@layout/fragment_new_publication" />
+
 </navigation>

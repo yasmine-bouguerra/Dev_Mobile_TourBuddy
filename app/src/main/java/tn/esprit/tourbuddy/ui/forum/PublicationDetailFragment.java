@@ -16,14 +16,12 @@ public class PublicationDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_detailpub, container, false);
 
-        // Récupérer les détails de la publication à partir des arguments
         Bundle bundle = getArguments();
         if (bundle != null) {
             String titre = bundle.getString("titre");
             String contenu = bundle.getString("contenu");
             String auteur = bundle.getString("auteur");
 
-            // Utiliser les détails de la publication pour mettre à jour l'interface utilisateur
             TextView textViewTitre = view.findViewById(R.id.text_view_titre);
             TextView textViewContenu = view.findViewById(R.id.text_view_contenu);
             TextView textViewAuteur = view.findViewById(R.id.text_view_auteur);

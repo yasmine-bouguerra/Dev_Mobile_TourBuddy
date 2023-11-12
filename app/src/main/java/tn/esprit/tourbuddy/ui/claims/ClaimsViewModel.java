@@ -10,7 +10,7 @@ public class ClaimsViewModel extends ViewModel {
 
     public ClaimsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is claims fragment");
+        mText.setValue("Liste Des Reclamations");
     }
 
     public LiveData<String> getText() {
