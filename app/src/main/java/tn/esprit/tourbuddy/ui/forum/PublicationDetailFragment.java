@@ -24,13 +24,15 @@ public class PublicationDetailFragment extends Fragment {
 
             TextView textViewTitre = view.findViewById(R.id.text_view_titre);
             TextView textViewContenu = view.findViewById(R.id.text_view_contenu);
-            TextView textViewAuteur = view.findViewById(R.id.text_view_auteur);
 
             textViewTitre.setText(titre);
             textViewContenu.setText(contenu);
-            textViewAuteur.setText(auteur);
         }
 
         return view;
+    }
+
+    public interface OnPublicationClickListener {
+        void onPublicationClick(String titre, String contenu, String auteur);
     }
 }

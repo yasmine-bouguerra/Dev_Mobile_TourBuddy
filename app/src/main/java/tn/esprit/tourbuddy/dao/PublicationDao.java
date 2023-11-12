@@ -23,5 +23,5 @@ public interface PublicationDao {
     void supprimerPublication(Publication publication);
 
     @Query("SELECT * FROM table_publication")
-    List<Publication> ListPublications();
+    List<Publication> getAll() ;
 }

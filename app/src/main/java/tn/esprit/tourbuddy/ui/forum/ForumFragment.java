@@ -25,6 +25,8 @@ import tn.esprit.tourbuddy.entity.Publication;
 
 public class ForumFragment extends Fragment {
 
+    private PublicationDetailFragment.OnPublicationClickListener publicationClickListener;
+
     private ListView listView;
 
     @Override
@@ -46,32 +48,41 @@ public class ForumFragment extends Fragment {
     private class LoadPublicationsAsync extends AsyncTask<Void, Void, List<Publication>> {
         @Override
         protected List<Publication> doInBackground(Void... voids) {
-            return AppDataBase.getInstance(requireContext()).publicationDao().ListPublications();
+            return AppDataBase.getAppDatabase(requireContext()).publicationDao().getAll();
         }
 
         @Override
         protected void onPostExecute(List<Publication> publications) {
             super.onPostExecute(publications);
 
-            ArrayList<HashMap<String, String>> listePublications = new ArrayList<>();
+            View view = getView();
+            if (view != null) {
+                listView = view.findViewById(R.id.listView);
+                if (listView != null) {
+                    ArrayList<HashMap<String, String>> listePublications = new ArrayList<>();
 
-            for (Publication publication : publications) {
-                HashMap<String, String> map = new HashMap<>();
-                map.put("titre", publication.getTitre());
-                map.put("contenu", publication.getContenu());
-                listePublications.add(map);
+                    for (Publication publication : publications) {
+                        HashMap<String, String> map = new HashMap<>();
+                        map.put("titre", publication.getTitre());
+                        map.put("contenu", publication.getContenu());
+                        map.put("image", publication.getImageP());
+                        // Ajoutez d'autres données si nécessaire
+                        listePublications.add(map);
+                    }
+
+                    SimpleAdapter adapter = new SimpleAdapter(
+                            getContext(),
+                            listePublications,
+                            R.layout.list_item_forum,
+                            new String[]{"titre", "contenu", "imageP"},
+                            new int[]{R.id.textViewTitre, R.id.textViewContenu, R.id.imageViewPublication}
+                    );
+
+                    listView.setAdapter(adapter);
+                }
             }
-            SimpleAdapter adapter = new SimpleAdapter(
-                    getContext(),
-                    listePublications,
-                    android.R.layout.simple_list_item_2,
-                    new String[]{"titre", "contenu", "imageP"},
-                    new int[]{android.R.id.text1, android.R.id.text2}
-            );
-
-            listView = getView().findViewById(R.id.listView);
-            listView.setAdapter(adapter);
         }
+
     }
 
     private void onAddPublicationClick(View v) {

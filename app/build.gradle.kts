@@ -43,6 +43,8 @@ dependencies {
             because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
         }
     }
+    implementation( "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -57,4 +59,5 @@ dependencies {
     //Room
     implementation("androidx.room:room-runtime:2.3.0")
     annotationProcessor("androidx.room:room-compiler:2.3.0")
+
 }

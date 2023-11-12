@@ -15,15 +15,18 @@ import tn.esprit.tourbuddy.entity.Publication;
 public abstract class AppDataBase extends RoomDatabase {
 
     private static AppDataBase instance;
+    public abstract PublicationDao publicationDao();
+    public abstract CommentDao commentDao();
 
-    public static synchronized AppDataBase getInstance(Context context) {
+    public static  AppDataBase getAppDatabase(Context context) {
         if (instance == null) {
-            instance = Room.databaseBuilder(context.getApplicationContext(), AppDataBase.class, "tour_buddy").build();
+            instance = Room.databaseBuilder(context.getApplicationContext(), AppDataBase.class, "tour_buddy")
+                    .allowMainThreadQueries()
+                    .build();
         }
         return instance;
     }
 
-    public abstract PublicationDao publicationDao();
-    public abstract CommentDao commentDao();
+
 
 }

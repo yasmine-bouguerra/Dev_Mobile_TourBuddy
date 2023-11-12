@@ -19,6 +19,8 @@ import androidx.navigation.Navigation;
 import java.io.IOException;
 
 import tn.esprit.tourbuddy.R;
+import tn.esprit.tourbuddy.database.AppDataBase;
+import tn.esprit.tourbuddy.entity.Publication;
 
 public class NewPublicationFragment extends Fragment {
 
@@ -45,12 +47,12 @@ public class NewPublicationFragment extends Fragment {
                 String title = editTextTitle.getText().toString();
                 String content = editTextContent.getText().toString();
 
-                // Vérifier si le titre et le contenu ne sont pas vides avant de continuer
                 if (!title.isEmpty() && !content.isEmpty()) {
-                    // Enregistrer dans la base de données ou effectuer l'action souhaitée
-                    // ...
+                    Publication newPublication = new Publication();
+                    newPublication.setTitre(title);
+                    newPublication.setContenu(content);
+                    AppDataBase.getAppDatabase(requireContext()).publicationDao().insererPublication(newPublication);
 
-                    // Retourner en arrière
                     getParentFragmentManager().popBackStack();
                 } else {
                     Toast.makeText(requireContext(), "Veuillez remplir tous les champs.", Toast.LENGTH_SHORT).show();
