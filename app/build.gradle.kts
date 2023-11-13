@@ -43,6 +43,8 @@ dependencies {
             because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
         }
     }
+    implementation ("com.squareup.picasso:picasso:2.71828")
+
     implementation( "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
     implementation("androidx.appcompat:appcompat:1.6.1")

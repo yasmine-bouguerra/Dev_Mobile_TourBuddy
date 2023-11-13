@@ -5,24 +5,63 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@drawable/image"
     tools:context=".ui.forum.PublicationDetailFragment">
 
     <TextView
         android:id="@+id/text_view_titre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"
-        tools:text="Titre de la publication" />
+        android:textSize="24sp"
+    android:textStyle="bold"
+    android:layout_marginBottom="8dp"
+    android:textColor="#333333"
+    tools:text="Titre de la publication" />
 
     <TextView
-        android:id="@+id/text_view_contenu"
+        android:id="@+id/text_view_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginBottom="8dp"
-        tools:text="Contenu de la publication" />
+        android:textSize="18sp"
+    android:layout_marginBottom="16dp"
+    android:textColor="#666666"/>
+
+    <EditText
+        android:id="@+id/edit_text_contenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Content"
+        android:background="#80F3F3F3"
+    android:padding="8dp"
+    android:textColor="#333333"/>
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="16dp"/>
 
 
-</LinearLayout>
+<Button
+android:id="@+id/btn_modify_publication"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Modifier"
+android:background="@drawable/button_custom_background"
+android:textColor="#FFFFFF"
+android:paddingStart="16dp"
+android:paddingEnd="16dp"
+android:layout_marginTop="16dp" />
+
+<Button
+android:id="@+id/btn_delete_publication"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Supprimer"
+android:background="@drawable/button_custom_background"
+android:textColor="#FFFFFF"
+android:layout_marginTop="16dp" />
+
+    </LinearLayout>

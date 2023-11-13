@@ -1,4 +1,8 @@
-<!-- res/layout/fragment_new_publication.xml -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,6 +22,11 @@
         android:layout_marginTop="8dp"
         android:hint="Contenu de la publication"/>
 
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"/>
 
     <Button
         android:id="@+id/btn_upload_image"
@@ -33,3 +42,5 @@
         android:text="Ajouter une nouvelle publication"
         android:layout_marginTop="16dp"/>
 </LinearLayout>
+
+</ScrollView>

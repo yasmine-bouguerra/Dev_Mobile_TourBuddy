@@ -9,14 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-
-import java.io.IOException;
 
 import tn.esprit.tourbuddy.R;
 import tn.esprit.tourbuddy.database.AppDataBase;
@@ -28,6 +27,7 @@ public class NewPublicationFragment extends Fragment {
     private EditText editTextContent;
     private Button btnSubmitPublication;
     private Button btnUploadImage;
+    private ImageView imageView;
 
     private static final int PICK_IMAGE_REQUEST = 1;
     private Uri imageUri;
@@ -40,6 +40,7 @@ public class NewPublicationFragment extends Fragment {
         editTextContent = view.findViewById(R.id.edit_text_content);
         btnSubmitPublication = view.findViewById(R.id.btn_add_publication);
         btnUploadImage = view.findViewById(R.id.btn_upload_image);
+        imageView = view.findViewById(R.id.image_view);
 
         btnSubmitPublication.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,10 +85,7 @@ public class NewPublicationFragment extends Fragment {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == getActivity().RESULT_OK && data != null && data.getData() != null) {
             imageUri = data.getData();
             try {
-                // Vous pouvez également utiliser Picasso ou une autre bibliothèque pour afficher l'image
-                // Dans cet exemple, nous utilisons directement l'URI pour l'afficher dans un ImageView
-                // ImageView imageView = findViewById(R.id.image_view);
-                // imageView.setImageURI(imageUri);
+                imageView.setImageURI(imageUri);
             } catch (Exception e) {
                 e.printStackTrace();
             }

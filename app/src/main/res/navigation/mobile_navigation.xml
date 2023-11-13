@@ -60,7 +60,10 @@
     <fragment
         android:id="@+id/nav_publication_details"
         android:name="tn.esprit.tourbuddy.ui.forum.PublicationDetailFragment"
-        tools:layout="@layout/fragment_detailpub" />
+        tools:layout="@layout/fragment_detailpub" >
+
+    </fragment>
+
 
     <fragment
         android:id="@+id/nav_new_publication"
